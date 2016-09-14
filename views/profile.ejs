@@ -2,7 +2,8 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
+<meta charset="utf-8">
+    <title>Ask a Dunmanian</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -14,36 +15,42 @@
 <div class="container">
 
     <div class="page-header text-center">
-        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <h1><%= user.google.picture %>Profile Page of <%= user.google.name %></h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
 
     <div class="row">
 
-        <!-- LOCAL INFORMATION -->
         <div class="col-sm-6">
             <div class="well">
                 <h3><span class="fa fa-user"></span> Local</h3>
 
                     <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
+                        <strong>Id</strong>: <%= user._id %><br>
+                        <strong>Email</strong>: <%= user.local.email %><br>
                     </p>
 
             </div>
         </div>
         
-         <!-- GOOGLE INFORMATION -->
         <div class="col-sm-6">
             <div class="well">
                 <h3 class="text-danger"><span class="fa fa-google-plus"></span> Google</h3>
 
                     <p>
-                        <strong>id</strong>: <%= user.google.id %><br>
-                        <strong>token</strong>: <%= user.google.token %><br>
-                        <strong>email</strong>: <%= user.google.email %><br>
-                        <strong>name</strong>: <%= user.google.name %>
+                        <strong>Name</strong>: <%= user.google.name %><br>
+                        <strong>Email</strong>: <%= user.google.email %>
+                    </p>
+
+            </div>
+        </div>
+
+        <div>
+            <div class="well">
+                <h3>DQueries Profile</h3>
+                    <p>
+                        <strong>Questions Posted</strong>: <h2><a href="/questions" class="small"><%= user.questions.question %></a></h2><br>
+                        <strong>Answers Posted</strong>: <h2><a href="/answers" class="small"><%= user.questions.answer %></a></h2>
                     </p>
 
             </div>

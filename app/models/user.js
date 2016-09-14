@@ -15,16 +15,17 @@ var userSchema = mongoose.Schema({
         id           : String,
         token        : String,
         email        : String,
-        name         : String
+        name         : String,
+        picture      : String,
     },
 
-    questions        :{
-        questions    : String,
-        comments     : String,
+    questions        : {
+        questionNo   : String,
+        answerNo     : String,
         upvotes      : String,
     }
 
-}, { collection: 'authScotch' });
+}, { collection: 'localUsers' });
 
 // methods ======================
 // generating a hash

@@ -92,9 +92,43 @@ module.exports = function(app, passport) {
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',
         passport.authenticate('google', {
-                successRedirect : '/profile',
+                successRedirect : '/home',
                 failureRedirect : '/'
     }));
+
+    app.get('/home', isLoggedIn, function(req,res) {
+        res.render('home.ejs', {
+            user: req.user
+        });
+    });
+
+    app.get('/questions', isLoggedIn, function(req,res) {
+        res.render('questions.ejs', {
+            user: req.user
+        });
+    });
+
+    app.get('/answers', isLoggedIn, function(req,res) {
+        res.render('answers.ejs', {
+            user: req.user
+        });
+    });
+
+    app.get('/createanswer', isLoggedIn, function(req,res) {
+        res.render('createanswer.ejs', {
+            user: req.user
+        });
+    });
+
+    app.get('/createquestion', isLoggedIn, function(req,res) {
+        res.render('createquestion.ejs', {
+            user: req.user
+        });
+    });
+
+    app.get('/stylesheet.css', function(req,res) {
+        res.sendFile('stylesheet.css');
+    });
 };
 
 // route middleware to make sure a user is logged in
