@@ -87,12 +87,12 @@ module.exports = function(app, passport) {
     // localhost issue?
     
     // http://stackoverflow.com/questions/34666105/google-oauth2-asking-for-offline-access
-    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'], accessType: 'offline', approvalPrompt: 'auto' }));
+    app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'], accessType: 'online', approvalPrompt: 'auto' }));
 
     // the callback after google has authenticated the user
     app.get('/auth/google/callback',
         passport.authenticate('google', {
-                successRedirect : '/profile',
+                successRedirect : '/home',
                 failureRedirect : '/'
     }));
 

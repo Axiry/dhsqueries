@@ -46,11 +46,12 @@
         </div>
 
         <div>
-            <div class="well">
+            <div class="well text-center">
                 <h3>DQueries Profile</h3>
                     <p>
-                        <strong>Questions Posted</strong>: <h2><a href="/questions" class="small"><%= user.questions.question %></a></h2><br>
-                        <strong>Answers Posted</strong>: <h2><a href="/answers" class="small"><%= user.questions.answer %></a></h2>
+                        <strong>Questions Posted</strong>: <h2><a href="/questions" class="small"><%= user.questions.questionNo %></a></h2><br>
+                        <strong>Answers Posted</strong>: <h2><a href="/answers" class="small"><%= user.questions.answerNo %></a></h2>
+                        <strong>Total Upvotes Recieved</strong>: <h2><a href="/answers" class="small"><%= user.questions.upvotes %></a></h2>
                     </p>
 
             </div>
