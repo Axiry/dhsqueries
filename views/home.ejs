@@ -173,7 +173,7 @@
    <button id="refreshQuestions">Refresh Questions</button>
    </div>
 <script>
-    funcion refreshQuestions() {
+    function refreshQuestions() {
         $.get("/allQuestions", function(data) {
             var optionsHTML = "";
             $('#allJokes').empty();
