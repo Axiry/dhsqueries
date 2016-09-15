@@ -165,12 +165,13 @@
         <h3>This webapp is currently under development, thus some functions like the answering, upvote/downvotes etc. are still restricted to admins only.</h3>
         <h3>The questions tracking are also a work-in-progress, therefore you will have to manually track the questions.</h3>
     </div>
-   </div>
+   
    <hr>
 
    <div class="text-hidden" id="allQuestions">
    </div>
    <button id="refreshQuestions">Refresh Questions</button>
+   </div>
 <script>
     funcion refreshQuestions() {
         $.get("/allQuestions", function(data) {
