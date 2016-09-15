@@ -179,9 +179,9 @@
             $('#allQuestions').empty();
             data.forEach(function(element, index, array) {
                 $('#allQuestions')
-                    .append($("<h3></h3>"))
+                    .append($("<h3></h3>")
                     .attr("value",element._id)
-                    .text(element.question)
+                    .text(element.question));
             })
         });
     }
