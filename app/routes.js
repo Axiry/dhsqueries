@@ -147,7 +147,6 @@ mongodb.connect('mongodb://admin:passwordonlyforadmins@ds021462.mlab.com:21462/d
         })
     })
 
-};
 });
 
 // route middleware to make sure a user is logged in
