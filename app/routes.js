@@ -144,9 +144,8 @@ mongodb.connect('mongodb://admin:passwordonlyforadmins@ds021462.mlab.com:21462/d
     app.post('/createQuestion', function(req, res) {
         collection.insertOne(req.body, function(err,results) {
             res.send(results);
-        })
-    })
-
+        });
+    });
 });
 
 // route middleware to make sure a user is logged in
