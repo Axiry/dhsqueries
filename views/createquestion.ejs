@@ -15,6 +15,7 @@
 <body>
 <h1 class="text-center">Ask Your Question!</h1>
 <div class="well text-center">
+	<h3>Go Back to <a href="dqueries.herokuapp.com/home">Home</a></h3>
 	<form id="createQuestion" method="post" action="/createQuestion">
   	<div class="form-group">
     	<label for="inputQuestion">Question:</label>
@@ -22,7 +23,6 @@
   	</div>
   	<button type="submit" name="submit" value="submit" class="btn btn-default">Submit</button>
 	</form>
-	<h3>Go Back to <a href="dqueries.herokuapp.com/home">Home</a></h3>
 </div>
 <script>
 	$("#createQuestion").submit(function(event) {
