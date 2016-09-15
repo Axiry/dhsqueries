@@ -176,10 +176,10 @@
     function refreshQuestions() {
         $.get("/allQueries", function(data) {
             var optionsHTML = "";
-            $('#allJokes').empty();
+            $('#allQuestions').empty();
             data.forEach(function(element, index, array) {
-                $('#allJokes')
-                    .append($("<h2></h2>"))
+                $('#allQuestions')
+                    .append($("<h3></h3>"))
                     .attr("value",element._id)
                     .text(element.question)
             })
