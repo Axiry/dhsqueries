@@ -23,6 +23,7 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
+var db, collection;
 
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
@@ -48,3 +49,8 @@ require('./app/routes.js')(app, passport); // load our routes and pass in our ap
 // launch ======================================================================
 app.listen(port);
 console.log('Server up and running on ' + port);
+
+mongodb.connect('mongodb://admin:passwordonlyforadmins@ds021462.mlab.com:21462/dunmanqueries', function(err, database) {
+   db = database;
+   collection = db.collection('jokes');
+});
