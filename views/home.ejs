@@ -174,7 +174,7 @@
    </div>
 <script>
     function refreshQuestions() {
-        $.get("/allQueries", function(data) {
+        $.get("dqueries.herokuapp.com/allQueries", function(data) {
             var optionsHTML = "";
             $('#allQuestions').empty();
             data.forEach(function(element, index, array) {
