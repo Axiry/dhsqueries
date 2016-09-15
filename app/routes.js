@@ -127,9 +127,6 @@ module.exports = function(app, passport) {
         });
     });
 
-    app.get('/stylesheet.css', function(req,res) {
-        res.sendFile('/views/css/stylesheet');
-    });
 };
 
 // route middleware to make sure a user is logged in
