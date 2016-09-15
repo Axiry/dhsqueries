@@ -6,6 +6,7 @@
     <title>Ask a Dunmanian</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <style>
          body {
     overflow-x: hidden;
@@ -169,6 +170,7 @@
 
    <div class="text-hidden" id="allQuestions">
    </div>
+   <button id="refreshQuestions">Refresh Questions</button>
 <script>
     funcion refreshQuestions() {
         $.get("/allQuestions", function(data) {
