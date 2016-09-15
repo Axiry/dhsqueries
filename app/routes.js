@@ -1,7 +1,13 @@
 // app/routes.js
 var express  = require('express');
 module.exports = function(app, passport) {
+var mongodb = require('mongodb').MongoClient;
 
+var db, collection;
+mongodb.connect('mongodb://admin:passwordonlyforadmins@ds021462.mlab.com:21462/dunmanqueries', function(err, database) {
+   db = database;
+   collection = db.collection('jokes');
+});
     // =====================================
     // HOME PAGE (with login links) ========
     // =====================================
