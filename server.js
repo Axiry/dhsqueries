@@ -13,6 +13,7 @@ var express  = require('express');
 var app      = express();
 var port     = process.env.PORT || 8080;
 var mongoose = require('mongoose');
+var mongodb = require('mongodb').MongoClient;
 
 var passport = require('passport');
 var flash    = require('connect-flash');
