@@ -127,6 +127,20 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.get('/allQueries', function(req,res) {
+        collection.find().toArray(
+            function(err, resultArray) {    
+                res.send(resultArray)   
+            }
+        );
+    });
+
+    app.post('/createQuestion', function(req, res) {
+        collection.insertOne(req.body, function(err,results) {
+            res.send(results);
+        })
+    })
+
 };
 
 // route middleware to make sure a user is logged in

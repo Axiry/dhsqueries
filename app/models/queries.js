@@ -5,9 +5,10 @@ var questionSchema = mongoose.Schema({
         question     : String,
         votes		 : 0,
         answers		 : 0,
+        postedBy	 : { type: String, ref: 'User' },
     },
     answers    		 : {
-    	answer: String,
+    	answer 		 : String,
     }
 }, { collection: 'postedQuestions' });
 

@@ -20,9 +20,10 @@ var userSchema = mongoose.Schema({
     },
 
     questions        : {
-        questionNo   : String,
-        answerNo     : String,
-        upvotes      : String,
+        questionNo   : 0,
+        answerNo     : 0,
+        upvotes      : 0,
+        votedPosts : [{ _id : mongoose.Schema.Types.ObjectId , votetype: Number }]
     }
 
 }, { collection: 'localUsers' });

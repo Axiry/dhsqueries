@@ -149,17 +149,39 @@
                     <a href="/questions">Your Questions</a>
                 </li>
                 <li>
-                    <a href="/answers">Your Answers</a>
+                    <a href="#">Your Answers</a>
                 </li>
                 <li>
-                    <a href="/createquestion" class="btn btn-danger btn-lg">Ask A Question!</a>
+                    <a href="#" class="btn btn-danger">Ask A Question!</a>
                 </li>
             </ul>
         </div>
     </div>
 
    <div	id="page-content-wrapper">
-   		<
+   		<h1 class="text-center" id="about">Welcome to DQueries!</h1>
+    <div class="small text-justify">
+        <p>This webapp is currently under development, thus some functions like the answering, upvote/downvotes etc. are still restricted to admins only.</p>
+        <p>The questions tracking are also a work-in-progress, therefore you will have to manually track the questions.</p>
+    </div>
    </div>
+   <hr>
+
+   <div class="text-hidden" id="allQuestions">
+   </div>
+<script>
+    funcion refreshQuestions() {
+        $.get("/allQuestions", function(data) {
+            var optionsHTML = "";
+            $('#allJokes').empty();
+            data.forEach(function(element, index, array) {
+                $('#allJokes')
+                    .append($("<h2></h2>"))
+                    .attr("value",element._id)
+                    .text(element.question)
+            })
+        });
+    }
+</script>
 </body>
 </html>

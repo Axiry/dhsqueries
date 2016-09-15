@@ -1,4 +1,4 @@
-<!-- views/createquestion.ejs -->
+<!-- views/createanswer.ejs -->
 <!doctype html>
 <html>
 <head>
@@ -12,5 +12,34 @@
     <link rel="icon" href="/public/favicon.png">
 </head>
 <body>
+<h1 class="text-center">Ask Your Question!</h1>
+<div class="well text-center">
+	<form id="createQuestion" method="post" action="/createQuestion">
+  	<div class="form-group">
+    	<label for="inputQuestion">Question:</label>
+    	<input type="text" class="form-control" id="inputQuestion" placeholder="Enter Your Question" rows="4" required="required">
+  	</div>
+  	<button type="submit" name="submit" value="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
+<script>
+	$("#createQuestion").submit(function(event) {
+		event.preventDefault();
+
+		var question = $('#inputQuestion').val();
+
+		$.ajax({
+			url: '/createQuestion',
+			type: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify({
+			"question": question,
+			"votes": 0,
+			"answers": 0,
+			"postedBy": user.google.name,
+			})
+		});
+	});
+</script>
 </body>
 </html>
