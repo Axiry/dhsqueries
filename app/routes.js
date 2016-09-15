@@ -127,7 +127,7 @@ module.exports = function(app, passport) {
     });
 
     app.get('/stylesheet.css', function(req,res) {
-        res.sendFile('stylesheet.css');
+        res.sendFile('/views/css/stylesheet.css');
     });
 };
 
