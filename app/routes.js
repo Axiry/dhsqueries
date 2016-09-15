@@ -126,6 +126,10 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.get('/favicon.ico', function(req,res){
+        res.sendFile(__dirname + '/views/public/favicon.png')
+    });
+
     app.use('/stylesheet.css', express.static(__dirname + '/views/css/stylesheet.css'));
 };
 
