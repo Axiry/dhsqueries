@@ -169,7 +169,7 @@
    
    <hr>
 
-   <div id="allQuestions">
+   <div id="allQuestions" class="text-center">
    </div>
    <div class="text-center container">
    <button class="btn btn-default" id="refreshQuestions">Refresh Questions</button>
@@ -183,7 +183,7 @@
             $('#allQuestions').empty();
             data.forEach(function(element, index, array) {
                 $('#allQuestions')
-                    .append($("<h3></h3>")
+                    .append($("<h4></h4>")
                     .attr("value",element._id)
                     .text(element.question));
             })
