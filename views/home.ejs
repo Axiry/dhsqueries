@@ -183,7 +183,7 @@
             $('#allQuestions').empty();
             data.forEach(function(element, index, array) {
                 $('#allQuestions')
-                    .append($("<h4></h4>")
+                    .append($("<h4></h4><br>")
                     .attr("value",element._id)
                     .text(element.question));
             })
